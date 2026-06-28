@@ -180,10 +180,19 @@ opening on start, is relatively easy.
 #. Click "Finish".
 
 Syncthing will now automatically start the next time you log on to your
-user account in Windows. No console or browser window will pop-up, but
-you can still access the interface by opening http://localhost:8384 in
-a Web browser.
+user account in Windows. 
+Syncthing 现在将在您下次登录 Windows 用户帐户时自动启动。
+Syncthing will now automatically start the next time you log on to your user account in Windows.
+  .. note::
+     On modern Windows (such as Windows 11 with the new Windows Terminal), the window may briefly flash and remain minimized in the taskbar due to OS terminal rendering. 
 
+  If you prefer a completely invisible background startup without any taskbar icons, you can replace the shortcut target with the following PowerShell command instead:
+
+  .. code-block:: bat
+
+     powershell -WindowStyle Hidden -Command "Start-Process 'syncthing' -ArgumentList '--no-console', '--no-browser'"
+
+  You can still access the interface by opening http://localhost:8384 in a Web browser.
 .. _autostart-windows-tools:
 
 Install and run using third-party tools
